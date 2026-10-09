@@ -6,6 +6,8 @@
 * Description: Rebuilds the trip calculator with methods and arrays so it 
 * reports on a whole group instead of one person.
 */
+const int pizzaSlices = 8;
+
 Console.Write("Round trip miles: ");
 int milesForTheTrip = Convert.ToInt32(Console.ReadLine());
 
@@ -41,3 +43,20 @@ static double FuelCost(double miles, double milesPerGallon, double pricePerGallo
     double gallons = miles / milesPerGallon;
     return gallons * pricePerGallon;
 }
+/////////////////////////////////////////
+// Part 2: The Group
+////////////////////
+Console.WriteLine("=== Part 2: The Group ===");
+
+string[] names = {"Ada", "Grace", "Alan", "Katherine"};
+double[] hoursWorked = {22, 15, 30, 18};
+double[] hourlyRates = {13.50, 16.00, 11.20, 14.80};
+
+int peopleGoing = names.Length;
+double slicesEach = (pizzaAmt * pizzaSlices) / (double)peopleGoing;
+double costPerPerson = tripTotal / peopleGoing;
+
+Console.WriteLine($"People going: {peopleGoing}");
+Console.WriteLine($"Slices each: {slicesEach.ToString("F1")}");
+Console.WriteLine($"Cost per person: {costPerPerson.ToString("C")}");
+System.Console.WriteLine();
