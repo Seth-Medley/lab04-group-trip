@@ -38,12 +38,6 @@ Console.WriteLine($"Fuel cost: {fuelCost.ToString("C")}");
 Console.WriteLine($"Pizza cost: {pizzaTotalCost.ToString("C")}");
 Console.WriteLine($"Trip total: {tripTotal.ToString("C")}");
 System.Console.WriteLine();
-
-static double FuelCost(double miles, double milesPerGallon, double pricePerGallon)
-{
-    double gallons = miles / milesPerGallon;
-    return gallons * pricePerGallon;
-}
 /////////////////////////////////////////
 // Part 2: The Group
 ////////////////////
@@ -84,6 +78,16 @@ Console.WriteLine($"Total hours worked: {totalHours}");
 Console.WriteLine($"Total take home pay: {totalTakeHomePay.ToString("C")}");
 Console.WriteLine($"Longest anyone must work: {longest.ToString("F2")}");
 System.Console.WriteLine();
+
+///////////////////////////////////////////
+/// Summary
+/// ///////////////////////////////////////
+// Calculates the fuel cost of the entire trip.
+static double FuelCost(double miles, double milesPerGallon, double pricePerGallon)
+{
+    double gallons = miles / milesPerGallon;
+    return gallons * pricePerGallon;
+}
 // Calculates how much the person takes home after taxes are withheld.
 static double TakeHomePay(double hours, double hourlyRate, double taxRate)
 {
